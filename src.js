@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Hide ADS for UKR.NET
-// @version  2.0
+// @version  1.0
 // @grant    none
 // @include  https://mail.ukr.net/*
 // ==/UserScript==
