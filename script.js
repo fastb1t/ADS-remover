@@ -3,7 +3,6 @@
 // @version         1.0
 // @description     Hide ADS for UKR.NET
 // @author          fastb1t
-// @license         GPLv3 - http://www.gnu.org/licenses/gpl-3.0.txt
 // @downloadURL     https://raw.github.com/fastb1t/ADS-remover/master/script.js
 // @updateURL       https://raw.github.com/fastb1t/ADS-remover/master/script.js
 // @grant           none
