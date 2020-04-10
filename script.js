@@ -9,45 +9,47 @@
 // @include         https://mail.ukr.net/*
 // ==/UserScript==
 
-var newDivText = 'Mail';
-var newDivID = '68424941D4065A0C5B9683ED55D313FAED5DBE4A98F125A2534DDAC597C0D725AFBB83CE1DABB50D0566CC22241F0E06F5C1C696E4029BFA86E9D93A95686035';
-var newDivStyle = {
-  'position':'absolute',
-  'top':              '0px',
-  'left':             '0px',
-  'width':            document.body.clientWidth + 'px',
-  'height':           '80px',
-  'z-index':          '99999',
-  'background-color': '#777777',
-  'color':            '#bbcb99',
-  'font-size':        '20px'
-};
+var newDivID = 'd41d8cd98f00b204e9800998ecf8427e';
 
-function set_style(element, styles) {
-  for (var styleName in styles) {
-    element.style[styleName] = styles[styleName];
-  }
-}
-
-function seek_and_destroy() {
-  var element = document.getElementById('top_banner');
-  if (element !== null) {
-    element.setAttribute('style', 'visibility: hidden');
-  }
-  
-  var parentDiv = document.getElementById('page');
-  if (parentDiv !== null && document.getElementById(newDivID) === null) {
-    var newDiv = document.createElement('div');
-    if (newDiv !== null) {
-      document.body.insertBefore(newDiv, parentDiv);
-      
-      newDiv.innerHTML = '<center style="margin-top: 25px"><b>' + newDivText + '</b></center>';
-      newDiv.id = newDivID;
-      set_style(newDiv, newDivStyle);
+function createNewDiv() {
+  if (document.getElementById(newDivID) === null) {
+    var element, parent;
+    
+    element = document.getElementById('top_banner');
+    if (element !== null) {
+      element.style['visibility'] = 'hidden';
+    }
+    
+    parent = document.getElementById('page');
+    if (parent !== null) {
+      element = document.createElement('div');
+      if (element !== null) {
+        element.style['position'] = 'absolute';
+        element.style['top'] = '0px';
+        element.style['left'] = '0px';
+        element.style['width'] = document.body.clientWidth + 'px';
+        element.style['height'] = '90px';
+        element.style['background-color'] = '#777f77';
+        
+        element.id = newDivID;
+        
+        element.innerHTML =
+          '<div style="font-size: 20px; color: #bbcb99; margin-top: 30px; text-align: center;">MAIL</div>' +
+          '<div style="font-size: 13px; color: #aabbaa; position: absolute; top: 67px; right: 10px;">by fastb1t</div>';
+        
+        document.body.insertBefore(element, parent);
+      }
     }
   }
 }
 
 window.onload = function() {
-  setInterval(seek_and_destroy, 1000);
+  setInterval(createNewDiv, 1000);
+}
+
+window.onresize = function() {
+  var element = document.getElementById(newDivID);
+  if (element !== null) {
+    element.style['width'] = document.body.clientWidth + 'px';
+  }
 }
