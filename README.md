@@ -6,5 +6,5 @@
 
 ## Тестировалось в:
 
-    Firefox 70.0.1 (x64)
+    Firefox 75.0 (x64)
     Greasemonkey 4.9
