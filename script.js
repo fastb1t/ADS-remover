@@ -3,6 +3,7 @@
 // @version         1.0
 // @description     Hide ADS for UKR.NET
 // @author          fastb1t
+// @homepageURL     https://raw.github.com/fastb1t/ADS-remover
 // @downloadURL     https://raw.github.com/fastb1t/ADS-remover/master/script.js
 // @updateURL       https://raw.github.com/fastb1t/ADS-remover/master/script.js
 // @grant           none
@@ -15,7 +16,7 @@ function createNewDiv() {
   if (document.getElementById(newDivID) === null) {
     var element, parent;
     
-    element = document.getElementById('top_banner');
+    element = document.getElementById('h_i_g'); // 'top_banner'
     if (element !== null) {
       element.style['visibility'] = 'hidden';
     }
@@ -35,7 +36,7 @@ function createNewDiv() {
         
         element.innerHTML =
           '<div style="font-size: 20px; color: #bbcb99; margin-top: 30px; text-align: center;">MAIL</div>' +
-          '<div style="font-size: 13px; color: #aabbaa; position: absolute; top: 67px; right: 10px;">by fastb1t</div>';
+          '<div style="font-size: 13px; color: #aabbaa; position: absolute; top: 67px; right: 10px;">Copyright \251 2020 fastb1t</div>';
         
         document.body.insertBefore(element, parent);
       }
