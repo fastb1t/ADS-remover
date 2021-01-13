@@ -16,7 +16,7 @@ function createNewDiv() {
   if (document.getElementById(newDivID) === null) {
     var element, parent;
     
-    element = document.getElementById('h_i_g'); // 'top_banner'
+    element = document.getElementById('top_banner');
     if (element !== null) {
       element.style['visibility'] = 'hidden';
     }
